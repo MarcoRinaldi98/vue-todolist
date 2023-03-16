@@ -27,8 +27,8 @@
 
         <main>
             <section class="new-task text-center my-5">
-                <input type="text" placeholder="Inserisci una cosa da fare"/>
-                <button>Aggiungi</button>       
+                <input type="text" v-model="newText" placeholder="Inserisci una cosa da fare"/>
+                <button @click="addTask">Aggiungi</button>       
             </section>
 
             <section class="task-list container-sm">
