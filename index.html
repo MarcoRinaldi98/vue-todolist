@@ -33,14 +33,14 @@
 
             <section class="task-list container-sm">
                 <ul>
-                    <li v-for="todo in todolist">
+                    <li v-for="(todo, index) in todolist">
                         <span v-if="todo.done == false? true:false" class="span-text fw-semibold">
                             {{todo.text}}
                         </span>
                         <span v-else class="span-text fw-semibold text-decoration-line-through">
                             {{todo.text}}
                         </span>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
                     </li>
                 </ul>
             </section>
