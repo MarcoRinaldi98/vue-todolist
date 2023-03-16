@@ -27,7 +27,7 @@
 
         <main>
             <section class="new-task text-center my-5">
-                <input type="text" v-model="newText" placeholder="Inserisci una cosa da fare"/>
+                <input type="text" v-model="newText" @keyup.enter="addTask" placeholder="Inserisci una cosa da fare"/>
                 <button @click="addTask">Aggiungi</button>       
             </section>
 
