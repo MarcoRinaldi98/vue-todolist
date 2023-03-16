@@ -39,7 +39,7 @@
 
             <section class="task-list container-sm">
                 <ul v-if="todolist.length > 0? true:false">
-                    <li v-for="(todo, index) in todolist">
+                    <li v-for="(todo, index) in todolist" class="rounded-top">
                         <span v-if="todo.done == false? true:false" class="span-text fw-semibold" @click="clickedOrNotClicked(todo)">
                             {{todo.text}}
                         </span>

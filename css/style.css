@@ -56,14 +56,18 @@ html{
     list-style: none;
 }
 .task-list li {
-    padding: 10px 0;
+    padding: 10px 5px;
     border-bottom: solid 1px var(--ms-secondary-color);
     display: flex;
     cursor: pointer;
 }
+.task-list li:hover {
+    background-color: var(--ms-text-white);
+}
 .span-text {
     flex-grow: 1;
 }
+
 
 
 /* MEDIA QUERY */
