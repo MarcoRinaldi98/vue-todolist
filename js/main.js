@@ -35,8 +35,12 @@ createApp({
     }, 
     methods: {
         addTask() {
+            const newTodo = {
+                text: this.newText, 
+                done: false
+            };
             if (this.newText.length >= 5) {
-                this.todolist.push({text: this.newText, done: false});
+                this.todolist.push(newTodo);
                 this.newText = ''; 
                 this.error = false;
             } else {
