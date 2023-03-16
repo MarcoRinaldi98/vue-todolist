@@ -33,9 +33,12 @@
 
             <section class="task-list container-sm">
                 <ul>
-                    <li>
-                        <span class="span-text">
-                            TEXT
+                    <li v-for="todo in todolist">
+                        <span v-if="todo.done == false? true:false" class="span-text fw-semibold">
+                            {{todo.text}}
+                        </span>
+                        <span v-else class="span-text fw-semibold text-decoration-line-through">
+                            {{todo.text}}
                         </span>
                         <i class="fa-solid fa-xmark"></i>
                     </li>
