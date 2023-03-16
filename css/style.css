@@ -51,6 +51,7 @@ html{
     padding: 10px 0;
     border-bottom: solid 1px var(--ms-secondary-color);
     display: flex;
+    cursor: pointer;
 }
 .span-text {
     flex-grow: 1;

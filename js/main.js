@@ -19,7 +19,7 @@ createApp({
                 },
                 {
                     text: 'Task 3',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Task 4',
@@ -27,7 +27,7 @@ createApp({
                 },
                 {
                     text: 'Task 5',
-                    done: true
+                    done: false
                 }               
             ]
         }           
@@ -39,6 +39,13 @@ createApp({
         },
         removeTask(index) {
             this.todolist.splice(index, 1);
+        },
+        clickedOrNotClicked(todo) {
+            if (todo.done == false) {
+                todo.done = true;
+            } else {
+                todo.done = false;
+            }
         }
     }
 }).mount('#app')
