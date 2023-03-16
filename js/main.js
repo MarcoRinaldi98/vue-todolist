@@ -8,6 +8,7 @@ createApp({
     data() {
         return {
             newText: '',
+            error: false,
             todolist: [
                 {
                     text: 'Task 1',
@@ -34,8 +35,13 @@ createApp({
     }, 
     methods: {
         addTask() {
-            this.todolist.push({text: this.newText, done: false});
-            this.newText = '';       
+            if (this.newText.length >= 5) {
+                this.todolist.push({text: this.newText, done: false});
+                this.newText = ''; 
+                this.error = false;
+            } else {
+                this.error = true;
+            }      
         },
         removeTask(index) {
             this.todolist.splice(index, 1);

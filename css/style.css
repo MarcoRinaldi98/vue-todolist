@@ -8,7 +8,7 @@
 
 /* VARIABILI */
 :root {
-    --ms-primary-color: lightgrey;
+    --ms-primary-color: #e4e4e4;
     --ms-secondary-color: lightslategray;
     --ms-text-white: #fff;
     --ms-text-black: #000;
@@ -23,9 +23,18 @@ html{
 }
 
 .logo {
-    height: 70px;
+    height: 70px;   
+    line-height: 70px;
+    vertical-align: middle;
 }
-
+.rainbow-text {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 70px;
+    vertical-align: middle;
+}
 .new-task input {
     padding: 10px;
     margin-right: 20px;
@@ -38,7 +47,6 @@ html{
     border-radius: 15px;
     border: none;
 }
-
 .task-list {
     background-color: var(--ms-primary-color);
     border-radius: 5px;

@@ -22,27 +22,36 @@
     <div id="app">
        
         <header class="container-sm text-center py-2">
-            <img class="logo" src="img/boolean-logo.png" alt="Logo" />
+            <img class="logo" src="img/Logo.png" alt="Logo" />
+            <span class="rainbow-text ps-3">boolean</span>
         </header>
 
         <main>
             <section class="new-task text-center my-5">
                 <input type="text" v-model="newText" @keyup.enter="addTask" placeholder="Inserisci una cosa da fare"/>
-                <button @click="addTask">Aggiungi</button>       
+                <button @click="addTask">Aggiungi</button>  
+                
+                <div v-show="error">
+                    <small class="text-danger">Errore, il testo deve essere lungo almeno 5 caratteri!</small>
+                </div>
+
             </section>
 
             <section class="task-list container-sm">
-                <ul>
-                    <li v-for="(todo, index) in todolist" @click="clickedOrNotClicked(todo)">
-                        <span v-if="todo.done == false? true:false" class="span-text fw-semibold">
+                <ul v-if="todolist.length > 0? true:false">
+                    <li v-for="(todo, index) in todolist">
+                        <span v-if="todo.done == false? true:false" class="span-text fw-semibold" @click="clickedOrNotClicked(todo)">
                             {{todo.text}}
                         </span>
-                        <span v-else class="span-text fw-semibold text-decoration-line-through">
+                        <span v-else class="span-text fw-semibold text-decoration-line-through"  @click="clickedOrNotClicked(todo)">
                             {{todo.text}}
                         </span>
-                        <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
+                        <i @click="removeTask(index)" class="fs-3 fa-solid fa-xmark"></i>
                     </li>
                 </ul>
+
+                <h3 v-else class="text-center">Non ci sono cose da fare nella lista! &#128517; </h3>
+
             </section>
         </main>
 
